@@ -1,0 +1,43 @@
+.headWrap{
+    padding: 10px;border-radius: 6px;
+}
+.head{
+    margin: 0;
+}
+.body{
+    border: solid 1px blue;
+    border-radius:6px;
+    padding: 30px;
+    overflow: auto;
+}
+.myNav{
+    margin-bottom: 30px;
+}
+.pageNum{
+    width:50px;
+    text-align: center;
+    height: 33px;
+    line-height: 33px;
+    border: solid 1px blue;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.addScoreWrap{
+    margin-top: 20px;
+}
+.addScoreWrap input,.modifyScoreWrap .searchResult input{
+    width: 100px;
+    height: 30px;
+}
+.wrongTip{
+    color:red;
+}
+.illegalTip {
+    border: solid 2px red;
+}
+.successTip{
+    color: blue;
+}
+.idConflictTip{
+    color: darkred;
+}

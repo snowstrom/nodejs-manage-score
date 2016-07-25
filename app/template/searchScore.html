@@ -1,0 +1,55 @@
+<div class="row searchScoreWrap">
+	<div class="col-md-10 col-md-offset-1">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-md-3 col-sm-3 control-label">
+					请选择查询方式：
+				</label>
+				<div class="col-md-9 col-sm-9">
+					<select class="form-control" ng-model="optionItem">
+						<option value="ID">按ID</option>
+						<option value="Name">按Name</option>
+						<option value="Chinese">按Chinese</option>
+						<option value="Math">按Math</option>
+						<option value="English">按English</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 col-sm-3 control-label">
+					{{optionItem}}：
+				</label>
+				<div class="col-md-9 col-sm-9">
+					<input type="text" class="form-control" ng-model="keyword">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3">
+					<a class="btn btn-primary pull-right" ng-click="search()">查询</a>
+				</div>
+			</div>
+		</form>
+		<div class="searchResult">
+			<table class="table table-bordered table-condensed">
+				<tr ng-show="searchFlag.head">
+					<th class="text-center">ID</th>
+					<th class="text-center">Name</th>
+					<th class="text-center">Chinese</th>
+					<th class="text-center">Math</th>
+					<th class="text-center">English</th>
+					<th class="text-center">Average</th>
+				</tr>
+				<tr ng-repeat="result in searchResult" ng-class="{successTip:result.tipFlag}">
+					<td>{{result.ID}}</td>
+					<td>{{result.Name}}</td>
+					<td>{{result.Chinese}}</td>
+					<td>{{result.Math}}</td>
+					<td>{{result.English}}</td>
+					<td>{{result.Average}}</td>
+				</tr>
+			</table>
+			<p ng-show="searchFlag.noResult" class="text-danger">未找到相关结果，请核实关键字后查询！</p>
+		</div>
+	</div>
+</div>
+

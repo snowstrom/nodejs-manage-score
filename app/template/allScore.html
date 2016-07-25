@@ -1,0 +1,27 @@
+<div class="row allScoreWrap">
+	<div class="col-md-10 col-md-offset-1">
+			<table class="table table-bordered">
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>Chinese</td>
+					<td>Math</td>
+					<td>English</td>
+				</tr>
+				<tr ng-repeat="data in myData | pagination:start:end">
+					<td>{{data.ID}}</td>
+					<td>{{data.Name}}</td>
+					<td>{{data.Chinese}}</td>
+					<td>{{data.Math}}</td>
+					<td>{{data.English}}</td>
+				</tr>
+			</table>
+		<div class="pull-right text-primary pageNum">共{{pageNum}}页</div>
+		<div class="btn-group pull-right">
+				<a class="btn btn-primary" ng-click="first()">首页</a>
+				<a class="btn btn-primary" ng-click="previous()" ng-class="{disabled:previousFlag}">上一页</a>
+				<a class="btn btn-primary" ng-click="next()" ng-class="{disabled:nextFlag}">下一页</a>
+				<a class="btn btn-primary" ng-click="last()">尾页</a>
+			</div>
+		</div>
+</div>

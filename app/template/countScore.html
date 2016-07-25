@@ -1,0 +1,21 @@
+<div class="row countScoreWrap">
+	<div class="col-md-10 col-md-offset-1">
+		<table class="table table-bordered">
+			<tr><td></td><td>Min</td><td>Max</td><td>Average</td></tr>
+			<tr><td>Chinese</td><td>{{m_m_a.min[0]}}</td><td>{{m_m_a.max[0]}}</td><td>{{m_m_a.average[0]}}</td></tr>
+			<tr><td>Math</td><td>{{m_m_a.min[1]}}</td><td>{{m_m_a.max[1]}}</td><td>{{m_m_a.average[1]}}</td></tr>
+			<tr><td>English</td><td>{{m_m_a.min[2]}}</td><td>{{m_m_a.max[2]}}</td><td>{{m_m_a.average[2]}}</td></tr>
+		</table>
+		<div class="row">
+			<div class="col-md-4">
+				<div id="chartChinese" style="width: 240px;height: 240px"></div>
+			</div>
+			<div class="col-md-4">
+				<div id="chartMath" style="width: 240px;height: 240px"></div>
+			</div>
+			<div class="col-md-4">
+				<div id="chartEnglish" style="width: 240px;height: 240px"></div>
+			</div>
+		</div>
+	</div>
+</div>

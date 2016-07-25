@@ -1,0 +1,47 @@
+<div class="row modifyScoreWrap">
+	<div class="col-md-10 col-md-offset-1">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-md-2  control-label">
+					ID：
+				</label>
+				<div class="col-md-10">
+					<input type="text" class="form-control" ng-model="keyword">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-10 col-md-offset-2">
+					<a class="btn btn-primary pull-right" ng-click="search()">查找修改项</a>
+
+				</div>
+			</div>
+		</form>
+		<div class="searchResult">
+			<table class="table table-bordered table-condensed">
+				<tr ng-show="searchFlag.head">
+					<th class="text-center">ID</th>
+					<th class="text-center">Name</th>
+					<th class="text-center">Chinese</th>
+					<th class="text-center">Math</th>
+					<th class="text-center">English</th>
+				</tr>
+				<tr ng-repeat="result in searchResult" ng-class="{successTip:result.tipFlag}">
+					<td><input type="text" ng-model="result.ID" ng-class="{illegalTip:result.ID===''}"></td>
+					<td><input type="text" ng-model="result.Name" ng-class="{illegalTip:result.Name===''}"></td>
+					<td><input type="number" min="0" ng-model="result.Chinese" ng-class="{illegalTip:result.Chinese===null}"></td>
+					<td><input type="number" min="0" ng-model="result.Math" ng-class="{illegalTip:result.Math===null}"></td>
+					<td><input type="number" min="0" ng-model="result.English" ng-class="{illegalTip:result.English===null}"></td>
+				</tr>
+			</table>
+			<p ng-show="searchFlag.noResult">未找到相关结果，请核实关键字后查询！</p>
+			<div ng-show="searchFlag.clickFlag && !searchFlag.noResult">
+				<span ng-class="{wrongTip:wrongTip}">{{tip}}</span>
+				<div class="btn-group pull-right">
+					<a class="btn btn-primary" ng-click="cancel()">取消</a>
+					<a class="btn btn-primary " ng-click="save()">保存</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

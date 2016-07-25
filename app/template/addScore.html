@@ -1,0 +1,32 @@
+<div class="row addScoreWrap">
+	<div class="col-md-10 col-md-offset-1">
+		<table class="table table-bordered">
+				<tr>
+					<th class="text-center">添加结果</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">Name</th>
+					<th class="text-center">Chinese</th>
+					<th class="text-center">Math</th>
+					<th class="text-center">English</th>
+					<th class="text-center">操作</th>
+				</tr>
+				<tr ng-repeat="info in infoArray">
+					<td ng-class="{idConflictTip:info.addFlag && info.idConflictFlag,successTip:info.addFlag && info.addSuccessFlag,wrongTip:info.addFlag && (info.ID==='' || info.Name==='' || info.Chinese==='' || info.Math==='' || info.English==='')}">{{info.addResult}}</td>
+					<td><input type="text" ng-model="info.ID"  ng-class="{illegalTip:info.addFlag && info.ID===''}"></td>
+					<td ><input type="text" ng-model="info.Name" ng-class="{illegalTip:info.addFlag && info.Name===''}"></td>
+					<td ><input type="number" ng-model="info.Chinese" min="0" ng-class="{illegalTip:info.addFlag && info.Chinese===''}"></td>
+					<td ><input type="number" ng-model="info.Math" min="0" ng-class="{illegalTip:info.addFlag && info.Math ===''}"></td>
+					<td ><input type="number" ng-model="info.English" min="0" ng-class="{illegalTip:info.addFlag && info.English===''}"></td>
+					<td ><a class="btn btn-danger" ng-click="deleteLine($index)">删除</a></td>
+				</tr>
+			</table>
+		<div class="btn-group pull-right">
+			<a class="btn btn-info" ng-click="addLine()">加一行</a>
+			<a class="btn btn-primary" ng-click="addScore()">添加</a>
+		</div>
+	</div>
+</div>
+
+
+
+

@@ -1,0 +1,42 @@
+<div class="row registerWrap">
+	<div class="col-md-6 col-sm-6 col-md-offset-2 col-sm-offset-2">
+		<form name="myForm" class="form-horizontal" role="form">
+			<div class="form-group has-feedback">
+				<label class="col-md-4 col-sm-4 control-label">
+					用户名：
+				</label>
+				<div class="col-md-8 col-sm-8" >
+					<input type="text" name="name" class="form-control"  ng-model="registerInfo.userName" required ng-pattern="/^[\w]+$/">
+					<span class="glyphicon glyphicon-ok form-control-feedback text-primary" ng-show="myForm.name.$dirty && myForm.name.$valid"></span>
+					<span class="glyphicon glyphicon-remove form-control-feedback wrongTip" ng-show="myForm.name.$dirty && !myForm.name.$valid"></span>
+					<span class="help-block" ng-class="{wrongTip:myForm.name.$dirty && myForm.name.$invalid}">必填，且只能是字母数字或下划线</span>
+				</div>
+			</div>
+			<div class="form-group has-feedback">
+				<label class="col-md-4 col-sm-4 control-label">
+					密码：
+				</label>
+				<div class="col-md-8 col-sm-8">
+					<input type="password" name="pw" class="form-control" ng-model="registerInfo.password" required ng-pattern="/^[0-9A-Za-z]+$/" ng-minlength="6" ng-maxlength="12">
+					<span class="glyphicon glyphicon-ok form-control-feedback text-primary" ng-show="myForm.pw.$dirty && myForm.pw.$valid"></span>
+					<span class="glyphicon glyphicon-remove form-control-feedback wrongTip" ng-show="myForm.pw.$dirty && !myForm.pw.$valid"></span>
+					<span class="help-block" ng-class="{wrongTip:myForm.pw.$dirty && myForm.pw.$invalid}">必填、长度必须为6到12位且只能是字母或数字</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 col-sm-4 control-label">
+					确认密码：
+				</label>
+				<div class="col-md-8 col-sm-8">
+					<input type="password" class="form-control" ng-model="confirmPW" required>
+					<span class="help-block wrongTip">{{tip}}</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-offset-4 col-sm-offset-4 col-md-8 col-sm-8">
+					<a class="btn btn-primary pull-right" ng-click="register()" ng-class="{disabled:myForm.$dirty && myForm.$invalid}">注册</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
